@@ -1,0 +1,45 @@
+
+
+#modulos {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 5%;
+}
+
+.modulos_content-group{
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+    grid-template-columns: 45% 45%;
+    margin-top: 2%;
+}
+
+.modulo_card{
+    display: grid;
+    grid-template-rows: 30% 30%;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    transition: all .3s ease-in-out;
+}
+
+.modulo_card:hover{
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modulo_card_title{
+    font-size: x-large;
+    justify-self: center;
+   margin-top: 5px;
+}
+
+.modulo_card_title, .color{
+    color: rgb(247, 159, 7);
+}
+
+.modulo_card_disciplinas{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
