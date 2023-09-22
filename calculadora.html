@@ -108,64 +108,98 @@
       <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
           <div class="card shadow">
-            
-            <div class="card-body">
-              <h5 class="card-title">Cálculo de iluminância</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Cálculo de Iluminância
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Cálculo de Iluminância</strong> 
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+            
         <div class="col">
           <div class="card shadow">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Cálculo de calor (IBUTG)
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body"> 
+                    <div class="card-body">
+                      <h5 class="card-title">Cálculo de calor (IBUTG)</h5>
+                      <p class="card-text lead">1 - Para ambientes internos ou para ambientes externos sem carga solar direta:</p>
+                      <div class="alert alert-primary" role="alert">
+                        <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                          <ul>
+                            <li>tbn = Temperatura de bulbo úmido natural em °C</li>
+                            <li>tg = Temperatura de globo em °C</li>
+                            <br/>
+                            <center><p><b>IBUTG</b> = 0,7 tbn + 0,3 tg</p></center>
+                          </ul>
+                      </div>
+                      
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">tbn</span>
+                        <input type="text" class="form-control" id="tbn1" placeholder="Temperatura de bulbo úmido natural em °C" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">tg</span>
+                        <input type="text" class="form-control" id="tg1"onblur="CalcularAmbienteInternos()"
+                         placeholder="Temperatura de globo em °C" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      
+                      <div class="input-group mb-3" style="justify-content: center;">
+                        <span class="input-group-text" id="basic-addon1">Resultado </span>
+                        <input type="text" class="form-control"  id="resultadoIBUTG1" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                      </div>
+                      <hr>
+        
+                      <p class="card-text lead mt-4 mb-3" >2 - Para ambientes externos com carga solar direta:</p>
+                        <div class="alert alert-primary" role="alert">
+                        <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                        <ul>
+                          <li>tbn = Temperatura de bulbo úmido natural em °C</li>
+                          <li>tg = Temperatura de globo em °C</li>
+                          <li>tbs = Temperatura de bulbo seco (temperatura do ar) em °C</li>
+                          <br/>
+                            <center><p><b>IBUTG</b> = 0,7 tbn + 0,2 tg + 0,1 tbs</p></center>
+                        </ul>
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">tbn</span>
+                        <input type="text" class="form-control" id="tbn2" placeholder="Temperatura de bulbo úmido natural em °C" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">tg</span>
+                        <input type="text" class="form-control" id="tg2" placeholder="Temperatura de globo em °C" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">tbs</span>
+                        <input type="text" class="form-control" id="tbs" placeholder="Temperatura de bulbo seco (temperatura do ar) em °C" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3" style="justify-content: center;">
+                        <span class="input-group-text" id="basic-addon1">Resultado </span>
+                        <input type="text" class="form-control" onmouseover="CalcularAmbienteExternos()" id="resultadoIBUTG2" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                                   
+                    </div>
+                  </div>
+                </div>
+        
+                  </div>
+                </div>
+              </div>
             
-            <div class="card-body">
-              <h5 class="card-title">Cálculo de calor (IBUTG)</h5>
-              <p class="card-text lead">1 - Para ambientes internos ou para ambientes externos sem carga solar direta:</p>
-              <div class="alert alert-primary" role="alert">
-                <h6><span class="badge bg-secondary">Atenção!</span></h6>
-                  <ul>
-                    <li>tbn = Temperatura de bulbo úmido natural em °C</li>
-                    <li>tg = Temperatura de globo em °C</li>
-                    <li>tbs = Temperatura de bulbo seco (temperatura do ar) em °C</li>
-                  </ul>
-              </div>
-              
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">tbn</span>
-                <input type="text" class="form-control" id="tbn1" placeholder="Temperatura de bulbo úmido natural em °C" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">tg</span>
-                <input type="text" class="form-control" id="tg1" placeholder="Temperatura de globo em °C" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-              
-              <div class="input-group mb-3" style="justify-content: center;">
-                <span class="input-group-text" id="basic-addon1">Resultado </span>
-                <input type="text" class="form-control" onmouseover="CalcularAmbienteInternos()" id="resultadoIBUTG1" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
-              </div>
-              <hr>
-
-              <p class="card-text lead mt-4 mb-3" >2 - Para ambientes externos com carga solar direta:</p>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">tbn</span>
-                <input type="text" class="form-control" id="tbn2" placeholder="Temperatura de bulbo úmido natural em °C" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">tg</span>
-                <input type="text" class="form-control" id="tg2" placeholder="Temperatura de globo em °C" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">tbs</span>
-                <input type="text" class="form-control" id="tbs" placeholder="Temperatura de bulbo seco (temperatura do ar) em °C" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-              <div class="input-group mb-3" style="justify-content: center;">
-                <span class="input-group-text" id="basic-addon1">Resultado </span>
-                <input type="text" class="form-control" onmouseover="CalcularAmbienteExternos()" id="resultadoIBUTG2" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
-                           
-            </div>
-          </div>
-        </div>
-
         <div class="col">
           <div class="card shadow">
             
