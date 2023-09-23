@@ -105,17 +105,18 @@
 
     <!--Sessões de cálculo -->
     <section class="mt-4 py-4 container bg-light">
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
+      <div class="row ">
+
+        <div class="col-md-6 mb-3">
           <div class="card shadow">
             <div class="accordion" id="accordionExample">
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#teste" aria-expanded="true" aria-controls="teste"> 
                     Cálculo de Iluminância
                   </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div id="teste" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                     <strong>Cálculo de Iluminância</strong> 
                   </div>
@@ -124,8 +125,8 @@
             </div>
           </div>
         </div>
-            
-        <div class="col">
+            <!-- para que cada item seja fechado unicamente, é necessário trocar o id, data-bs-target e aria-controls-->
+        <div class="col-md-6 mb-3">
           <div class="card shadow">
             <div class="accordion" id="accordionExample">
               <div class="accordion-item">
@@ -186,11 +187,11 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">tbs</span>
-                        <input type="text" class="form-control" id="tbs" placeholder="Temperatura de bulbo seco (temperatura do ar) em °C" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" id="tbs" onblur="CalcularAmbienteExternos()" placeholder="Temperatura de bulbo seco (temperatura do ar) em °C" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3" style="justify-content: center;">
                         <span class="input-group-text" id="basic-addon1">Resultado </span>
-                        <input type="text" class="form-control" onmouseover="CalcularAmbienteExternos()" id="resultadoIBUTG2" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                        <input type="text" class="form-control" id="resultadoIBUTG2" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
                                    
                     </div>
                   </div>
@@ -199,35 +200,68 @@
                   </div>
                 </div>
               </div>
-            
-        <div class="col">
-          <div class="card shadow">
-            
-            <div class="card-body">
-              <h5 class="card-title">Cálculo Limite de Tolerância (LT)</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
             </div>
+           </div> 
+
+
+            
+        <div class="col-md-6 mb-3">
+          <div class="card shadow">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#limiteTolerancia" aria-expanded="true" aria-controls="limiteTolerancia"> 
+                    Limite de Tolerância
+                  </button>
+                </h2>
+                <div id="limiteTolerancia" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Cálculo Limite de Tolerância (LT)</strong>>
+                  </div>
+                </div>
+              </div>
+            </div>  
           </div>
         </div>
-        <div class="col">
+
+        <div class="col-md-6 mb-3">
           <div class="card shadow">
-            
-            <div class="card-body">
-              <h5 class="card-title">Cálculo de Nível de Exposição ao Ruído (NE)</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#NE" aria-expanded="true" aria-controls="NE"> 
+                    Cálculo de Nível de Exposição ao Ruído (NE)
+                  </button>
+                </h2>
+                <div id="NE" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Cálculo de Nível de Exposição ao Ruído (NE)</strong>>
+                  </div>
+                </div>
+              </div>
+            </div>  
           </div>
         </div>
-        <div class="col">
+
+        <div class="col-md-6 mb-3">
           <div class="card shadow">
-            
-            <div class="card-body">
-              <h5 class="card-title">Cálculo de Taxa de Exposição a Radiação</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#TaxaExposicao" aria-expanded="true" aria-controls="TaxaExposicao"> 
+                    Cálculo de Taxa de Exposição a Radiação
+                  </button>
+                </h2>
+                <div id="TaxaExposicao" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>Cálculo de Taxa de Exposição a Radiação</strong>>
+                  </div>
+                </div>
+              </div>
+            </div>  
           </div>
         </div>
-      </div>
+
 
     </section>
 
