@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Occup Health</title>
     <link rel="stylesheet" href="estilo.css">
-    <script src="index.js"></script>
+    
     <!-- Link para os arquivos CSS do Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -235,7 +235,35 @@
                 </h2>
                 <div id="NE" class="accordion-collapse collapse show" >
                   <div class="accordion-body">
-                    <strong>Cálculo de Nível de Exposição ao Ruído (NE)</strong>>
+                    <div class="card-body">
+                      <h5 class="card-title">Cálculo de Nível de Exposição ao Ruído (NE)</h5>
+                      <div class="alert alert-primary" role="alert">
+                        <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                          <ul>
+                            <li>LAE = Nível de Exposição ao Ruído em dBA.</li>
+                            <li>T1, T2, ..., Tn = tempos de exposição em horas associados a níveis de ruído L1, L2, ..., Ln em dBA.</li>
+                            <li>T0 = tempo de referência em horas (geralmente 8 horas para uma jornada de trabalho típica)</li>
+                            <br/>
+                            <center><p><b>LAE</b> = 10 * log10((T1/T0) * 10^(L1/10) + (T2/T0) * 10^(L2/10) + ... + (Tn/T0) * 10^(Ln/10))</p></center>
+                          </ul>
+                      </div>
+                      <!-- ÁREA DOS INPUTS-->
+                      
+                      
+                        <form id="formulario" action="" method="post" >
+                          <div class="input-group mb-3">
+                            <label for="numPontos" class="input-group-text" id="basic-addon1">Quantos pontos de medição de ruído deseja inserir?</label>
+                            <input type="number" id="numPontos" name="numPontos" class="form-control" placeholder="digite aqui" aria-describedby="basic-addon1">
+                          </div>
+            
+                          <div id="pontosMedicao"></div>
+                          
+                          <button type="submit" class="btn btn-primary mb-3 col-md-12">Calcular LAE</button>
+                        </form>
+
+                        <center><div  id="resultado"></div></center>
+                      
+                    </div>
                   </div>
                 </div>
               </div>
@@ -262,7 +290,6 @@
           </div>
         </div>
 
-
     </section>
 
 
@@ -278,4 +305,6 @@
 
     <!-- Link para os arquivos JavaScript do Bootstrap (opcional, se necessário) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> 
-</body>
+    <script src="index.js"></script>
+
+  </body>
