@@ -117,13 +117,236 @@
             <div class="accordion" id="trecho1">
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#teste" aria-expanded="true" aria-controls="teste"> 
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     Cálculo de Iluminância
                   </button>
                 </h2>
-                <div id="teste" class="accordion-collapse collapse show" >
-                  <div class="accordion-body">
-                    <strong>Cálculo de Iluminância</strong> 
+                <div id="collapseOne" class="accordion-collapse collapse show" >
+                  <div class="accordion-body"> 
+                    <div class="card-body">
+                      <h5 class="card-title">Cálculo de Iluminância</h5>
+                      <p class="card-text lead">1 - Ambiente de trabalho de área retangular, iluminado com fontes de iluminação com padrão regular, simetricamente espaçadas em duas ou mais fileiras:</p>
+                      <div class="alert alert-primary" role="alert">
+                        <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                          <ul>
+                            <li>R = Medições</li>
+                            <li>Q = Quatro leituras (Norte e Sul)</li>
+                            <li>T = Quatro leituras (Leste e Oeste)</li>
+                            <li>P = Pontas extremas</li>
+                            <li>N = Quantidade de luminárias por fila</li>
+                            <li>M = Número de filas</li>
+                            <br/>
+                            <center><p><b>I</b> = R(N-1) (M-1) + Q (N-1) + T (M-1) + P/N M</p></center>
+                          </ul>
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">R</span>
+                        <input type="text" class="form-control" id="R" placeholder="Medições" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Q</span>
+                        <input type="text" class="form-control" id="Q"onblur="CalcularIluminancia1()"
+                         placeholder="Quatro leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">T</span>
+                        <input type="text" class="form-control" id="T" placeholder="Quatro leituras (Leste e Oeste)" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">P</span>
+                        <input type="text" class="form-control" id="P"onblur="CalcularIluminancia1()"
+                         placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">N</span>
+                        <input type="text" class="form-control" id="N" placeholder="Quantidade de luminárias por fila" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">M</span>
+                        <input type="text" class="form-control" id="M"onblur="CalcularIluminancia1()"
+                         placeholder="Número de filas" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3" style="justify-content: center;">
+                        <span class="input-group-text" id="basic-addon1">Resultado </span>
+                        <input type="text" class="form-control"  id="resultadoIluminancia1" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                      </div>
+                      <hr>
+
+                    <p class="card-text lead">2 - Ambiente de trabalho de área retangular com luminária central:</p>
+                      <div class="alert alert-primary" role="alert">
+                        <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                          <ul>
+                            <li>P = Média aritmética dos pontos centrais</li>
+                            <br/>
+                            <center><p><b>P</b> = P1 + P2 + P3 + .../n</p></center>
+                          </ul>
+                      </div>
+                      <form id="formulario" action="" method="post" >
+                        <div class="input-group mb-3">
+                          <label for="numPontos" class="input-group-text" id="basic-addon1">Quantos pontos centrais deseja inserir?</label>
+                          <input type="number" id="numPontos" name="numPontos" class="form-control" placeholder="digite aqui" aria-describedby="basic-addon1" max="20" min="1">
+                        </div>
+          
+                        <div id="pontosMedicao"></div>
+                        
+                        <button type="submit" class="btn btn-primary mb-3 col-md-12">Calcular</button>
+                      </form>
+
+                      <center><div  id="resultado"></div></center>
+
+                    <p class="card-text lead">3 - Ambiente de trabalho de área retangular com linha única de luminárias:</p>
+                      <div class="alert alert-primary" role="alert">
+                        <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                          <ul>
+                            <li>Q = Pontos do centro</li>
+                            <li>P = Pontas extremas</li>
+                            <li>N = Quantidade de luminárias</li>
+                            <br/>
+                            <center><p><b>I</b> = Q (N-1) + P/N </p></center>
+                          </ul>
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Q</span>
+                        <input type="text" class="form-control" id="Qc"onblur="CalcularIluminancia3()" placeholder="Pontos do centro" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">P</span>
+                        <input type="text" class="form-control" id="Pe"onblur="CalcularIluminancia3()" placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">N</span>
+                        <input type="text" class="form-control" id="Nl" placeholder="Quantidade de luminárias" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3" style="justify-content: center;">
+                        <span class="input-group-text" id="basic-addon1">Resultado </span>
+                        <input type="text" class="form-control"  id="resultadoIluminancia3" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                      </div>
+                      <hr>
+
+                    <p class="card-text lead">4 - Ambiente de trabalho de área retangular com duas ou mais linhas contínuas de luminárias:</p>
+                      <div class="alert alert-primary" role="alert">
+                        <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                          <ul>
+                            <li>R = Pontos centrais</li>
+                            <li>Q = Duas leituras (Norte e Sul)</li>
+                            <li>T = Quatro leituras (Leste e Oeste)</li>
+                            <li>P = Pontas extremas</li>
+                            <li>N = Quantidade de luminárias por fila</li>
+                            <li>M = Número de filas</li>
+                            <br/>
+                            <center><p><b>I</b> = R*N (M-1) + Q*N + T (M-1) + P/M (N+1)</p></center>
+                          </ul>
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">R</span>
+                        <input type="text" class="form-control" id="RC" placeholder="Pontos centrais" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Q</span>
+                        <input type="text" class="form-control" id="QD" onblur="CalcularIluminancia4()"
+                         placeholder="Duas leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">T</span>
+                        <input type="text" class="form-control" id="TQ" placeholder="Quatro leituras (Leste e Oeste)" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">P</span>
+                        <input type="text" class="form-control" id="PE" onblur="CalcularIluminancia4()"
+                         placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">N</span>
+                        <input type="text" class="form-control" id="NQ" placeholder="Quantidade de luminárias por fila" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">M</span>
+                        <input type="text" class="form-control" id="MF" onblur="CalcularIluminancia4()"
+                         placeholder="Número de filas" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3" style="justify-content: center;">
+                        <span class="input-group-text" id="basic-addon1">Resultado </span>
+                        <input type="text" class="form-control"  id="resultadoIluminancia4" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                      </div>
+                      <hr>
+
+                    <p class="card-text lead">5 - Ambiente de trabalho de área retangular com uma linha contínua de luminárias:</p>
+                      <div class="alert alert-primary" role="alert">
+                        <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                          <ul>
+                            <li>Q = Pontos centrais (Norte e Sul)</li>
+                            <li>P = Pontas extremas</li>
+                            <li>N = Quantidade de luminárias</li>
+                            <br/>
+                            <center><p><b>I</b> = Q*N + P/N + 1</p></center>
+                          </ul>
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Q</span>
+                        <input type="text" class="form-control" id="QPc"onblur="CalcularIluminancia5()"
+                         placeholder="Quatro leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">P</span>
+                        <input type="text" class="form-control" id="Pex"onblur="CalcularIluminancia5()"
+                         placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">N</span>
+                        <input type="text" class="form-control" id="Nql" placeholder="Quantidade de luminárias" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3" style="justify-content: center;">
+                        <span class="input-group-text" id="basic-addon1">Resultado</span>
+                        <input type="text" class="form-control"  id="resultadoIluminancia5" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                      </div>
+                      <hr>
+
+                    <p class="card-text lead">6 - Ambiente de trabalho de área retangular com teto luminoso:</p>
+                      <div class="alert alert-primary" role="alert">
+                        <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                          <ul>
+                            <li>R = Pontos centrais</li>
+                            <li>Q = Duas leituras (Norte e Sul)</li>
+                            <li>T = Duas leituras (Leste e Oeste)</li>
+                            <li>P = Pontas extremas</li>
+                            <li>W = Largura do recinto, em metros</li>
+                            <li>L = Comprimento do recinto, em metros</li>
+                            <br/>
+                            <center><p><b>I</b> = R(L-8) (W-8) + 8*Q (L-8) + 8*T (W-8) + 64*P/W L</p></center>
+                          </ul>
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">R</span>
+                        <input type="text" class="form-control" id="RPc" placeholder="Pontos Centrais" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Q</span>
+                        <input type="text" class="form-control" id="QDl"onblur="CalcularIluminancia6()"
+                         placeholder="Duas leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">T</span>
+                        <input type="text" class="form-control" id="TDl" placeholder="Duas leituras (Leste e Oeste)" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">P</span>
+                        <input type="text" class="form-control" id="PPe"onblur="CalcularIluminancia6()"
+                         placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">W</span>
+                        <input type="text" class="form-control" id="W" placeholder="Largura do recinto, em metros" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">L</span>
+                        <input type="text" class="form-control" id="L"onblur="CalcularIluminancia6()"
+                         placeholder="Comprimento do recinto, em metros" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3" style="justify-content: center;">
+                        <span class="input-group-text" id="basic-addon1">Resultado </span>
+                        <input type="text" class="form-control"  id="resultadoIluminancia6" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

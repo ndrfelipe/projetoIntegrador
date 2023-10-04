@@ -1,3 +1,64 @@
+//Função para calcular Iluminancia 1
+function CalcularIluminancia1() {
+  var R = document.getElementById("R").value
+  var Q = document.getElementById("Q").value
+  var T = document.getElementById("T").value
+  var P = document.getElementById("P").value
+  var N = document.getElementById("N").value
+  var M = document.getElementById("M").value
+  var calculo =  (R*(N-1)*(M-1)+Q*(N-1)+T*(M-1)+P)/(N*M)
+  document.getElementById("resultadoIluminancia1").value = calculo
+}
+
+//Função para calcular Iluminancia 2
+function CalcularIluminancia1() {
+  var R = document.getElementById("R").value
+  var calculo =  (R*(N-1)*(M-1)+Q*(N-1)+T*(M-1)+P)/(N*M)
+  document.getElementById("resultadoIluminancia1").value = calculo
+}
+
+//Função para calcular Iluminancia 3
+function CalcularIluminancia4() {
+  var Qc = document.getElementById("Qc").value
+  var Pe= document.getElementById("Pe").value
+  var Nl = document.getElementById("Nl").value
+  var calculo =  (Q*(N-1)+P)/N
+  document.getElementById("resultadoIluminancia3").value = calculo
+}
+
+//Função para calcular Iluminancia 4
+function CalcularIluminancia4() {
+  var RC = document.getElementById("RC").value
+  var QD = document.getElementById("QD").value
+  var TQ = document.getElementById("TQ").value
+  var PE = document.getElementById("PE").value
+  var NQ = document.getElementById("NQ").value
+  var MF = document.getElementById("MF").value
+  var calculo =  (R*N*(M-1)+Q*N+T*(M-1)+P)/(M*(N-1))
+  document.getElementById("resultadoIluminancia4").value = calculo
+}
+
+//Função para calcular Iluminancia 5
+function CalcularIluminancia4() {
+  var QD = document.getElementById("QPc").value
+  var PE = document.getElementById("Pex").value
+  var NQ = document.getElementById("Nql").value
+  var calculo =  (Q*N+P)/(N+1)
+  document.getElementById("resultadoIluminancia5").value = calculo
+}
+
+//Função para calcular Iluminancia 6
+function CalcularIluminancia6() {
+  var RPc = document.getElementById("RPc").value
+  var QDl = document.getElementById("QDl").value
+  var TDl = document.getElementById("TDl").value
+  var PPe = document.getElementById("PPe").value
+  var W = document.getElementById("W").value
+  var L = document.getElementById("L").value
+  var calculo =  (R*(L-8)*(W-8)+8*Q*(L-8)+8*T*(W-8)+64*P)/(W*L)
+  document.getElementById("resultadoIluminancia6").value = calculo
+}
+
 //Função para calcular IBUTG 1
 function CalcularAmbienteInternos() {
     var tbn = document.getElementById("tbn1").value
@@ -14,8 +75,6 @@ function CalcularAmbienteExternos() {
     var calculo =   (0.7 * tbn2) + (0.2 * tg2) + (0.1 * tbs)
     document.getElementById("resultadoIBUTG2").value = calculo
 }
-
-
 
 // Função para calcular o Nível de Exposição ao Ruído (LAE) em dBA
 function calcularLAE(niveisRuido, temposExposicao) {
