@@ -6,8 +6,8 @@ function CalcularIluminancia1() {
   var P = document.getElementById("P").value
   var N = document.getElementById("N").value
   var M = document.getElementById("M").value
-  var calculo =  (R*(N-1)*(M-1)+Q*(N-1)+T*(M-1)+P)/(N*M)
-  document.getElementById("resultadoIluminancia1").value = calculo
+  var calculo1 =  (R*(N-1)*(M-1)+Q*(N-1)+T*(M-1)+P)/(N*M)
+  document.getElementById("resultadoIluminancia1").value = calculo1
 }
 
 /*Função para calcular Iluminancia 2
@@ -22,8 +22,8 @@ function CalcularIluminancia3() {
   var Qc = document.getElementById("Qc").value
   var Pe= document.getElementById("Pe").value
   var Nl = document.getElementById("Nl").value
-  var calculo =  (Q*(N-1)+P)/N
-  document.getElementById("resultadoIluminancia3").value = calculo
+  var calculo3 =  (Q*(N-1)+P)/N
+  document.getElementById("resultadoIluminancia3").value = calculo3
 }
 
 //Função para calcular Iluminancia 4
@@ -34,8 +34,8 @@ function CalcularIluminancia4() {
   var PE = document.getElementById("PE").value
   var NQ = document.getElementById("NQ").value
   var MF = document.getElementById("MF").value
-  var calculo =  (R*N*(M-1)+Q*N+T*(M-1)+P)/(M*(N-1))
-  document.getElementById("resultadoIluminancia4").value = calculo
+  var calculo4 = (R*N*(M-1)+Q*N+T*(M-1)+P)/(M*(N-1))
+  document.getElementById("resultadoIluminancia4").value = calculo4
 }
 
 //Função para calcular Iluminancia 5
@@ -43,8 +43,8 @@ function CalcularIluminancia5() {
   var QD = document.getElementById("QPc").value
   var PE = document.getElementById("Pex").value
   var NQ = document.getElementById("Nql").value
-  var calculo =  (Q*N+P)/(N+1)
-  document.getElementById("resultadoIluminancia5").value = calculo
+  var calculo5 = (Q*N+P)/(N+1)
+  document.getElementById("resultadoIluminancia5").value = calculo5
 }
 
 //Função para calcular Iluminancia 6
@@ -55,8 +55,8 @@ function CalcularIluminancia6() {
   var PPe = document.getElementById("PPe").value
   var W = document.getElementById("W").value
   var L = document.getElementById("L").value
-  var calculo =  (R*(L-8)*(W-8)+8*Q*(L-8)+8*T*(W-8)+64*P)/(W*L)
-  document.getElementById("resultadoIluminancia6").value = calculo
+  var calculo6 = (R*(L-8)*(W-8)+8*Q*(L-8)+8*T*(W-8)+64*P)/(W*L)
+  document.getElementById("resultadoIluminancia6").value = calculo6
 }
 
 //Função para calcular IBUTG 1

@@ -193,6 +193,7 @@
                       </form>
 
                       <center><div  id="resultado"></div></center>
+                    <hr>
 
                     <p class="card-text lead">3 - Ambiente de trabalho de área retangular com linha única de luminárias:</p>
                       <div class="alert alert-primary" role="alert">
@@ -207,7 +208,7 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Q</span>
-                        <input type="text" class="form-control" id="Qc" placeholder="Pontos do centro" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" id="Qc" onblur="CalcularIluminancia3()" placeholder="Pontos do centro" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">P</span>
@@ -215,11 +216,11 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">N</span>
-                        <input type="text" class="form-control" id="Nl" placeholder="Quantidade de luminárias" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" id="Nl" onblur="CalcularIluminancia3()" placeholder="Quantidade de luminárias" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3" style="justify-content: center;">
                         <span class="input-group-text" id="basic-addon1">Resultado </span>
-                        <input type="text" class="form-control"  id="resultadoIluminancia3" onblur="CalcularIluminancia3()" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                        <input type="text" class="form-control"  id="resultadoIluminancia3" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
                       </div>
                       <hr>
 
@@ -353,6 +354,7 @@
             </div>
           </div>
         </div>
+      </div>
             <!-- para que cada item seja fechado unicamente, é necessário trocar o id, data-bs-target e aria-controls-->
         <div class="col-md-12 mb-3" style="width: 80%; margin: 0 auto;">
           <div class="card shadow">
