@@ -10,15 +10,15 @@ function CalcularIluminancia1() {
   document.getElementById("resultadoIluminancia1").value = calculo
 }
 
-//Função para calcular Iluminancia 2
-function CalcularIluminancia1() {
+/*Função para calcular Iluminancia 2
+function CalcularIluminancia2() {
   var R = document.getElementById("R").value
   var calculo =  (R*(N-1)*(M-1)+Q*(N-1)+T*(M-1)+P)/(N*M)
-  document.getElementById("resultadoIluminancia1").value = calculo
-}
+  document.getElementById("resultadoIluminancia2").value = calculo
+}*/
 
 //Função para calcular Iluminancia 3
-function CalcularIluminancia4() {
+function CalcularIluminancia3() {
   var Qc = document.getElementById("Qc").value
   var Pe= document.getElementById("Pe").value
   var Nl = document.getElementById("Nl").value
@@ -39,7 +39,7 @@ function CalcularIluminancia4() {
 }
 
 //Função para calcular Iluminancia 5
-function CalcularIluminancia4() {
+function CalcularIluminancia5() {
   var QD = document.getElementById("QPc").value
   var PE = document.getElementById("Pex").value
   var NQ = document.getElementById("Nql").value
