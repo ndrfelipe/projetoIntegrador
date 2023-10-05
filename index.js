@@ -6,8 +6,8 @@ function CalcularIluminancia1(){
   var P = document.getElementById("P").value
   var N = document.getElementById("N").value
   var M = document.getElementById("M").value
-  var calculo =  (N-1) //(((R* (N-1)) * (M-1)) + (Q * (N-1)) + (T* (M-1)) +P) / (N * M)
-  document.getElementById("ResultadoIluminancia1").value = calculo
+  var calculo = (((R* (N-1)) * (M-1)) + (Q * (N-1)) + (T* (M-1)) +P) / (N * M)
+  document.getElementById("resultadoIluminancia1").value = calculo
 }
 
 /*Função para calcular Iluminancia 2
