@@ -74,9 +74,7 @@
         <div class="col-md-6">
           <h3 class="display-4">Cálculos de Higiene Ocupacional</h3>
           <p class="lead mb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi fugit magni, nemo facilis reiciendis hic. Commodi esse, repellat doloremque similique ipsam voluptas, iure nam modi asperiores provident non repellendus exercitationem.</p>
-
         </div>
-
         <div class="col-md-6">
           <h3 class="display-5">Cálculos disponíveis</h3>
           <ul class="list-group list-group-flush">
@@ -99,19 +97,14 @@
             <li class="list-group-item">
               <a href="#trecho5" class="btn btn-light">Cálculo de Taxa de Exposição a Radiação </a>
             </li>
-
           </ul>
         </div>
       </div>
-
     </header>
-
-
 
     <!--Sessões de cálculo -->
     <section class="mt-4 py-4 container bg-light">
-      <div class="row ">
-
+      <div class="row">
         <div class="col-md-12 mb-3" style="width: 80%; margin: 0 auto;">
           <div class="card shadow">
             <div class="accordion" id="trecho1">
@@ -141,34 +134,34 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">R</span>
-                        <input type="text" class="form-control" id="R" placeholder="Medições" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="R" placeholder="Medições" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Q</span>
-                        <input type="text" class="form-control" id="Q"
+                        <input type="number" class="form-control" id="Q"
                          placeholder="Quatro leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">T</span>
-                        <input type="text" class="form-control" id="T" placeholder="Quatro leituras (Leste e Oeste)" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="T" placeholder="Quatro leituras (Leste e Oeste)" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">P</span>
-                        <input type="text" class="form-control" id="P"
+                        <input type="number" class="form-control" id="P"
                          placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">N</span>
-                        <input type="text" class="form-control" id="N" placeholder="Quantidade de luminárias por fila" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="N" placeholder="Quantidade de luminárias por fila" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">M</span>
-                        <input type="text" class="form-control" id="M" onblur="CalcularIluminancia1()"
+                        <input type="number" class="form-control" id="M" onblur="CalcularIluminancia1()"
                          placeholder="Número de filas" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3" style="justify-content: center;">
                         <span class="input-group-text" id="basic-addon1">Resultado </span>
-                        <input type="text" class="form-control"  id="resultadoIluminancia1" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                        <input type="number" class="form-control"  id="ResultadoIluminancia1" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
                       </div>
                       <hr>
 
@@ -208,7 +201,7 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Q</span>
-                        <input type="text" class="form-control" id="Qc" onblur="CalcularIluminancia3()" placeholder="Pontos do centro" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" id="Qc" placeholder="Pontos do centro" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">P</span>
@@ -240,34 +233,31 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">R</span>
-                        <input type="text" class="form-control" id="RC" placeholder="Pontos centrais" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="RC" placeholder="Pontos centrais" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Q</span>
-                        <input type="text" class="form-control" id="QD" onblur="CalcularIluminancia4()"
-                         placeholder="Duas leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="QD" placeholder="Duas leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">T</span>
-                        <input type="text" class="form-control" id="TQ" placeholder="Quatro leituras (Leste e Oeste)" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="TQ" placeholder="Quatro leituras (Leste e Oeste)" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">P</span>
-                        <input type="text" class="form-control" id="PE" onblur="CalcularIluminancia4()"
-                         placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="PE" placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">N</span>
-                        <input type="text" class="form-control" id="NQ" placeholder="Quantidade de luminárias por fila" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="NQ" placeholder="Quantidade de luminárias por fila" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">M</span>
-                        <input type="text" class="form-control" id="MF" onblur="CalcularIluminancia4()"
-                         placeholder="Número de filas" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="MF" onblur="CalcularIluminancia4()" placeholder="Número de filas" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3" style="justify-content: center;">
                         <span class="input-group-text" id="basic-addon1">Resultado </span>
-                        <input type="text" class="form-control"  id="resultadoIluminancia4" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                        <input type="number" class="form-control"  id="resultadoIluminancia4" placeholder="TESTE" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
                       </div>
                       <hr>
 
@@ -284,17 +274,15 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Q</span>
-                        <input type="text" class="form-control" id="QPc" onblur="CalcularIluminancia5()"
-                         placeholder="Quatro leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" id="QPc" placeholder="Quatro leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">P</span>
-                        <input type="text" class="form-control" id="Pex" onblur="CalcularIluminancia5()"
-                         placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" id="Pex" placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">N</span>
-                        <input type="text" class="form-control" id="Nql" placeholder="Quantidade de luminárias" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" id="Nql" onblur="CalcularIluminancia5()" placeholder="Quantidade de luminárias" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3" style="justify-content: center;">
                         <span class="input-group-text" id="basic-addon1">Resultado</span>
@@ -322,8 +310,7 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Q</span>
-                        <input type="text" class="form-control" id="QDl" onblur="CalcularIluminancia6()"
-                         placeholder="Duas leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" id="QDl" placeholder="Duas leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">T</span>
@@ -331,8 +318,7 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">P</span>
-                        <input type="text" class="form-control" id="PPe" onblur="CalcularIluminancia6()"
-                         placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" id="PPe" placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">W</span>
@@ -354,7 +340,7 @@
             </div>
           </div>
         </div>
-      </div>
+
             <!-- para que cada item seja fechado unicamente, é necessário trocar o id, data-bs-target e aria-controls-->
         <div class="col-md-12 mb-3" style="width: 80%; margin: 0 auto;">
           <div class="card shadow">
@@ -365,7 +351,7 @@
                     Cálculo de calor (IBUTG)
                   </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" >
+                <div id="collapseOne" class="accordion-collapse collapse show">
                   <div class="accordion-body"> 
                     <div class="card-body">
                       <h5 class="card-title" id="calcibutg">Cálculo de calor (IBUTG)</h5>
@@ -426,15 +412,11 @@
                     </div>
                   </div>
                 </div>
-        
-                  </div>
-                </div>
               </div>
             </div>
-           </div> 
-
-
-            
+          </div>
+        </div>
+           
         <div class="col-md-12 mb-3" style="width: 80%; margin: 0 auto;">
           <div class="card shadow">
             <div class="accordion" id="trecho3">
@@ -519,7 +501,7 @@
             </div>  
           </div>
         </div>
-
+      </div>
     </section>
     
     <div class="bg-dark text-white pt-1 pb-1">
