@@ -71,9 +71,9 @@
     <!-- Área de apresentação -->
     <header class="container mt-3 mb-3" id="areaDeApresentacao">
       <div class="row">
-        <div class="col-md-6">
-          <h3 class="display-4">Cálculos de Higiene Ocupacional</h3>
-          <p class="lead mb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi fugit magni, nemo facilis reiciendis hic. Commodi esse, repellat doloremque similique ipsam voluptas, iure nam modi asperiores provident non repellendus exercitationem.</p>
+        <div class="col-md-6 ">
+          <h3 class="display-4 ">Cálculos de Higiene Ocupacional</h3>
+          <p class="lead mb-2">Calculando a Segurança, protegendo vidas <br> <span style="color: #79F643;">OccupHealth</span>, o seu parceiro em Higiene Ocupacional</p>
 
         </div>
 
@@ -109,7 +109,7 @@
 
 
     <!--Sessões de cálculo -->
-    <section class="mt-4 py-4 container bg-light">
+    <section class="mt-4 py-4 container bg-light mb-3">
       <div class="row ">
 
         <div class="col-md-12 mb-3" style="width: 80%; margin: 0 auto;">
@@ -380,17 +380,17 @@
                       
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">tbn</span>
-                        <input type="text" class="form-control" id="tbn1" placeholder="Temperatura de bulbo úmido natural em °C" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" max="400" min="1" class="form-control" id="tbn1" placeholder="Temperatura de bulbo úmido natural em °C" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">tg</span>
-                        <input type="text" class="form-control" id="tg1"onblur="CalcularAmbienteInternos()"
+                        <input type="number" max="400" min="1" class="form-control" id="tg1"onblur="CalcularAmbienteInternos()"
                          placeholder="Temperatura de globo em °C" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       
                       <div class="input-group mb-3" style="justify-content: center;">
                         <span class="input-group-text" id="basic-addon1">Resultado </span>
-                        <input type="text" class="form-control"  id="resultadoIBUTG1" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                        <input type="number" max="400" min="1" class="form-control"  id="resultadoIBUTG1" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
                       </div>
                       <hr>
         
@@ -407,15 +407,15 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">tbn</span>
-                        <input type="text" class="form-control" id="tbn2" placeholder="Temperatura de bulbo úmido natural em °C" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" max="400" min="1" class="form-control" id="tbn2" placeholder="Temperatura de bulbo úmido natural em °C" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">tg</span>
-                        <input type="text" class="form-control" id="tg2" placeholder="Temperatura de globo em °C" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" max="400" min="1" class="form-control" id="tg2" placeholder="Temperatura de globo em °C" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">tbs</span>
-                        <input type="text" class="form-control" id="tbs" onblur="CalcularAmbienteExternos()" placeholder="Temperatura de bulbo seco (temperatura do ar) em °C" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" max="400" min="1" class="form-control" id="tbs" onblur="CalcularAmbienteExternos()" placeholder="Temperatura de bulbo seco (temperatura do ar) em °C" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3" style="justify-content: center;">
                         <span class="input-group-text" id="basic-addon1">Resultado </span>
@@ -480,7 +480,7 @@
                       
                         <form id="formulario" action="" method="post" >
                           <div class="input-group mb-3">
-                            <label for="numPontos" class="input-group-text" id="basic-addon1">Quantos pontos de medição de ruído deseja inserir?</label>
+                            <span for="numPontos" class="input-group-text" id="basic-addon1">Quantos pontos de medição de ruído deseja inserir?</span>
                             <input type="number" id="numPontos" name="numPontos" class="form-control" placeholder="digite aqui" aria-describedby="basic-addon1" max="20" min="1">
                           </div>
             
@@ -510,10 +510,130 @@
                 </h2>
                 <div id="TaxaExposicao" class="accordion-collapse collapse show" >
                   <div class="accordion-body">
-                    <strong>Cálculo de Taxa de Exposição a Radiação</strong>>
-                  </div>
-                </div>
-              </div>
+                    
+                          <h5 class="card-title" id="calcibutg">Cálculo de Taxa de Exposição a Radiação</h5>
+                          <p class="card-text lead">Radiação Primária e Secundária
+                          </p>
+                          <div class="alert alert-primary" role="alert">
+                            <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                              <ul>
+                                    <li>Lm = média das leituras obtidas, em mR/h; </li>
+                                    <li>Φ(p,t) =  fator de correção para pressão e temperatura; </li>
+                                    <li>fc = fator de calibração de instrumento de medida;</li> 
+                                    <li>BG = nível de radiação de fundo encontrado, em mR/h; </li>
+                                    <li>fI = fator de correção para a corrente: razão entre mAmax ou mAsmax utilizadas na rotina e mA ou mAs utilizadas durante as medidas; </li>
+                                    <li>fE = fator de correção de energia, de acordo com a curva de dependência energética.</li>
+                                <br/>
+
+                                <center><p><b>X =</b> (Lm * Φ(p, t) * fc − BG) *
+                                  * fI * fE
+                                </p></center>
+                              </ul>
+
+                          </div>
+
+                          <p class="lead muted">Leituras Realizadas em Modo Taxa de Exposição</p>
+                          
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Lm</span>
+                            <input type="number" max="400" min="1" class="form-control" id="lm" placeholder="média das leituras obtidas, em mR/h" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Φ(p,t)</span>
+                            <input type="number" max="400" min="1" class="form-control" id="pt" placeholder="fator de correção para pressão e temperatura" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">fc</span>
+                            <input type="number" max="400" min="1" class="form-control" id="fc" placeholder="fator de calibração de instrumento de medida" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">BG</span>
+                            <input type="number" max="400" min="1" class="form-control" id="bg" placeholder="nível de radiação de fundo encontrado, em mR/h" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">fI</span>
+                            <input type="number" max="400" min="1" class="form-control" id="fi" placeholder="fator de correção para a corrente: razão entre mAmax ou mAsmax utilizadas na rotina e mA ou mAs utilizadas durante as medidas" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">fE</span>
+                            <input type="number" max="400" min="1" class="form-control" id="fe"onblur="CalcularRadiacaoPrimaria()" 
+                            placeholder=" fator de correção de energia, de acordo com a curva de dependência energética." aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+                          
+                          <div class="input-group mb-3" style="justify-content: center;">
+                            <span class="input-group-text" id="basic-addon1">Resultado </span>
+                            <input type="text" class="form-control"  id="resultadoRad" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                          </div>
+                          <hr>
+
+                          <p class="card-text lead">Radiação Primária e Secundária
+                          </p>
+                          <div class="alert alert-primary" role="alert">
+                            <h6><span class="badge bg-secondary">Atenção!</span></h6>
+                              <ul>
+                                <li>Lm = média das leituras obtidas, em mR;</li>
+                                <li>t = tempo de leitura, em segundos;</li>
+                                <li>3600 = fator de conversão de segundos para hora;</li>
+                                <li>Φ(p,t) = fator de correção para pressão e temperatura;</li>
+                                <li>fc = fator de calibração do instrumento de medida;</li>
+                                <li>BG = nível de radiação de fundo, em mR;</li>
+                                <li>fI = fator de correção para a corrente: razão entre mAmax ou mAsmax utilizadas na rotina e mA ou mAs utilizadas durante as medidas;</li>
+                                <li>fE = fator de correção de energia de acordo com a curva de dependências energética.</li>
+                                <br/>
+
+                                <center><p><b>X =</b>(Lm/t *  3600 * Φ(p,t) *  fc - BG) * fI * fE</p></center>
+                              </ul>
+
+                          </div>
+
+                          <p class="lead muted">Leituras Realizadas em Modo Integrador</p>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Lm</span>
+                            <input type="number" max="400" min="1" class="form-control" id="lm2" placeholder="média das leituras obtidas, em mR" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">t</span>
+                            <input type="number" max="400" min="1" class="form-control" id="t2" placeholder="tempo de leitura, em segundos" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Φ(p,t)</span>
+                            <input type="number" max="400" min="1" class="form-control" id="pt2" placeholder="fator de correção para pressão e temperatura" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">fc</span>
+                            <input type="number" max="400" min="1" class="form-control" id="fc2" placeholder="fator de calibração do instrumento de medida" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">BG</span>
+                            <input type="number" max="400" min="1" class="form-control" id="bg2" placeholder=" nível de radiação de fundo, em mR" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">fI</span>
+                            <input type="number" max="400" min="1" class="form-control" id="fi2" placeholder="fator de correção para a corrente: razão entre mAmax ou mAsmax utilizadas na rotina e mA ou mAs utilizadas durante as medidas" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">fE</span>
+                            <input type="number" max="400" min="1" class="form-control" id="fe2"onblur="CalcularRadiacaoPrimaria2()" 
+                            placeholder=" fator de correção de energia, de acordo com a curva de dependência energética." aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+                          
+                          <div class="input-group mb-3" style="justify-content: center;">
+                            <span class="input-group-text" id="basic-addon1">Resultado </span>
+                            <input type="text" class="form-control"  id="resultadoRad2" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                          </div>
+                  
             </div>  
           </div>
         </div>
