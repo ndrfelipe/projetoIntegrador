@@ -141,59 +141,45 @@
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">R</span>
-                        <input type="text" class="form-control" id="R" placeholder="Medições" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="R" placeholder="Medições" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Q</span>
-                        <input type="text" class="form-control" id="Q"
-                         placeholder="Quatro leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="Q" placeholder="Quatro leituras (Norte e Sul)" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">T</span>
-                        <input type="text" class="form-control" id="T" placeholder="Quatro leituras (Leste e Oeste)" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="T" placeholder="Quatro leituras (Leste e Oeste)" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">P</span>
-                        <input type="text" class="form-control" id="P"
+                        <input type="number" class="form-control" id="P"
                          placeholder="Pontas extremas" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">N</span>
-                        <input type="text" class="form-control" id="N" placeholder="Quantidade de luminárias por fila" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="N" placeholder="Quantidade de luminárias por fila" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">M</span>
-                        <input type="text" class="form-control" id="M" onblur="CalcularIluminancia1()"
-                         placeholder="Número de filas" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" id="M" onblur="CalcularIluminancia1()" placeholder="Número de filas" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3" style="justify-content: center;">
                         <span class="input-group-text" id="basic-addon1">Resultado </span>
-                        <input type="text" class="form-control"  id="resultadoIluminancia1" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
+                        <input type="number" min="0" max="100" step="0.01" class="form-control"  id="resultadoIluminancia1" placeholder="" aria-label="Username" aria-describedby="basic-addon1" disabled readonly>
                       </div>
                       <hr>
 
-                    <p class="card-text lead">2 - Ambiente de trabalho de área retangular com luminária central:</p>
+                      <p class="card-text lead">2 - Ambiente de trabalho de área retangular com linha única de luminárias:</p>
                       <div class="alert alert-primary" role="alert">
                         <h6><span class="badge bg-secondary">Atenção!</span></h6>
                           <ul>
-                            <li>P = Média aritmética dos pontos centrais</li>
-                            <br/>
-                            <center><p><b>P</b> = P1 + P2 + P3 + .../n</p></center>
+                            <center><p><b>I</b> = Média aritmética dos pontos centrais </p></center>
                           </ul>
                       </div>
-                      <form id="formulario" action="" method="post" >
-                        <div class="input-group mb-3">
-                          <label for="numPontos" class="input-group-text" id="basic-addon1">Quantos pontos centrais deseja inserir?</label>
-                          <input type="number" id="numPontos" name="numPontos" class="form-control" placeholder="digite aqui" aria-describedby="basic-addon1" max="20" min="1">
-                        </div>
-          
-                        <div id="pontosMedicao"></div>
-                        
-                        <button type="submit" class="btn btn-primary mb-3 col-md-12">Calcular</button>
-                      </form>
-
-                      <center><div  id="resultado"></div></center>
-                    <hr>
+                      
+                      <hr>
+                                        
 
                     <p class="card-text lead">3 - Ambiente de trabalho de área retangular com linha única de luminárias:</p>
                       <div class="alert alert-primary" role="alert">
