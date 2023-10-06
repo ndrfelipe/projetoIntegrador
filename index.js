@@ -133,3 +133,28 @@ function calcularLAE(niveisRuido, temposExposicao) {
 
     document.getElementById("pontosMedicao").innerHTML = html;
   });
+
+  // cálculo de radiação
+
+function CalcularRadiacaoPrimaria(){
+  var lm = document.getElementById("lm").value
+  var pt = document.getElementById("pt").value
+  var fc = document.getElementById("fc").value
+  var bg = document.getElementById("bg").value
+  var fi = document.getElementById("fi").value
+  var fe = document.getElementById("fe").value
+  var calculo = ((lm * pt * fc - bg) *  fi * fe)
+  document.getElementById("resultadoRad").value = calculo
+}
+
+function CalcularRadiacaoPrimaria2(){
+  var lm2 = document.getElementById("lm2").value
+  var t2 = document.getElementById("t2").value
+  var pt2 = document.getElementById("pt2").value
+  var fc2 = document.getElementById("fc2").value
+  var bg2 = document.getElementById("bg2").value
+  var fi2 = document.getElementById("fi2").value
+  var fe2 = document.getElementById("fe2").value
+  var calculo = ((lm2 / t2) *  3600) * pt2 *  fc2 - bg2 * fi2 * fe2
+  document.getElementById("resultadoRad2").value = calculo
+}
