@@ -110,7 +110,8 @@ function calcularLAE(niveisRuido, temposExposicao) {
 
     try {
       const resultadoLAE = calcularLAE(niveisRuido, temposExposicao);
-      document.getElementById("resultado").innerHTML = `O Nível de Exposição ao Ruído (LAE) é: ${resultadoLAE.toFixed(2)} dBA`;
+      document.getElementById("resultado").innerHTML = `<div class="alert alert-success">O Nível de Exposição ao Ruído (LAE) é: ${resultadoLAE.toFixed(2)} dBA</div>`;
+      
     } catch (error) {
       console.error(error.message);
     }
@@ -123,9 +124,9 @@ function calcularLAE(niveisRuido, temposExposicao) {
     let html = "";
     for (let i = 0; i < numPontos; i++) {
       html += `<label for="nivelRuido${i}">Nível de Ruído (dBA) no ponto ${i + 1}:</label>`;
-      html += `<input type="number" id="nivelRuido${i}" name="nivelRuido${i}" step="0.01"><br>`;
+      html += `<input type="number" class="form-control" id="nivelRuido${i}" name="nivelRuido${i}" step="0.01"><br>`;
       html += `<label for="tempoExposicao${i}">Tempo de Exposição (horas) no ponto ${i + 1}:</label>`;
-      html += `<input type="number" id="tempoExposicao${i}" name="tempoExposicao${i}" step="0.01"><br><br>`;
+      html += `<input type="number" class="form-control" id="tempoExposicao${i}" name="tempoExposicao${i}" step="0.01"><br><br>`;
     }
 
     document.getElementById("pontosMedicao").innerHTML = html;
@@ -155,3 +156,59 @@ function CalcularRadiacaoPrimaria2(){
   var calculo = ((lm2 / t2) *  3600) * pt2 *  fc2 - bg2 * fi2 * fe2
   document.getElementById("resultadoRad2").value = calculo
 }
+
+
+//média de iluminancia
+        // Captura o formulário
+        const mediaForm = document.getElementById('media-form');
+
+        // Adiciona um evento de envio ao formulário
+        mediaForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o envio padrão do formulário
+
+            // Captura a quantidade de números
+            const quantidadeDeNumeros = parseInt(document.getElementById('quantidadeDeNumeros').value);
+
+            // Inicializa a variável de soma
+            let soma = 0;
+
+            // Loop para coletar e somar os números
+            for (let i = 1; i <= quantidadeDeNumeros; i++) {
+                const numero = parseFloat(document.getElementById(`numero-${i}`).value);
+
+                // Verifica se o valor é um número válido
+                if (!isNaN(numero)) {
+                    soma += numero;
+                } else {
+                    alert("Você digitou um valor inválido. Por favor, insira um número válido.");
+                    return; // Sai da função se um valor inválido for inserido
+                }
+            }
+
+            // Calcula a média
+            const media = soma / quantidadeDeNumeros;
+
+            // Exibe o resultado
+            document.getElementById('resultado_media').innerHTML = `<div class="alert alert-success">A média dos números inseridos é: ${media.toFixed(2)}</div>`;
+        });
+
+        // Função para adicionar os campos de entrada de números
+        function adicionarCamposDeNumeros(quantidade) {
+            const numerosInputs = document.getElementById('numeros-inputs');
+            numerosInputs.innerHTML = '';
+
+            for (let i = 1; i <= quantidade; i++) {
+                numerosInputs.innerHTML += `
+                    <div class="form-group">
+                        <label for="numero-${i}">Digite o número ${i}</label>
+                        <input type="number" class="form-control" id="numero-${i}">
+                    </div>
+                `;
+            }
+        }
+
+        // Captura a quantidade de números quando o campo muda
+        document.getElementById('quantidadeDeNumeros').addEventListener('input', function() {
+            const quantidade = parseInt(this.value);
+            adicionarCamposDeNumeros(quantidade);
+        });

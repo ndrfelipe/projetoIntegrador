@@ -64,7 +64,7 @@
             </div>
 
             
-            <a href="form.html" class="btn btn-md float-end text-light" style="background-color: #79F643;">Entrar</a>
+            <a href="paginaprincipal.html" class="btn btn-md float-end text-light" style="background-color: #79F643;">Entrar</a>
         </div>
     </nav>
 
@@ -86,10 +86,6 @@
 
             <li class="list-group-item">
               <a href="#trecho2" class="btn btn-light">Cálculo de calor (IBUTG)</a>
-            </li>
-
-            <li class="list-group-item">
-              <a href="#trecho3" class="btn btn-light">Cálculo Limite de Tolerância (LT)</a>
             </li>
 
             <li class="list-group-item">
@@ -121,7 +117,7 @@
                     Cálculo de Iluminância
                   </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" >
+                <div id="collapseOne" class="accordion-collapse collapse show">
                   <div class="accordion-body"> 
                     <div class="card-body">
                       <h5 class="card-title">Cálculo de Iluminância</h5>
@@ -176,6 +172,24 @@
                           <ul>
                             <center><p><b>I</b> = Média aritmética dos pontos centrais </p></center>
                           </ul>
+                      </div>
+
+                      <h2>Calculadora de Média</h2>
+                      <form id="media-form">
+                          <div class="form-group">
+                              <label for="quantidadeDeNumeros">Quantos números você deseja calcular a média?</label>
+                              <input type="number" class="form-control" id="quantidadeDeNumeros" max="400" min="1">
+                          </div>
+                          
+                          <div id="numeros-inputs">
+                              <!-- Aqui serão adicionados os inputs para os números -->
+                          </div>
+                          
+                          <button type="submit" class="btn btn-primary mt-4">Calcular Média</button>
+                      </form>
+                      
+                      <div id="resultado_media" class="mt-4">
+                          <!-- Aqui será exibido o resultado -->
                       </div>
                       
                       <hr>
@@ -347,11 +361,11 @@
             <div class="accordion" id="trecho2">
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#IB" aria-expanded="true" aria-controls="IB">
                     Cálculo de calor (IBUTG)
                   </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" >
+                <div id="IB" class="accordion-collapse collapse show" >
                   <div class="accordion-body"> 
                     <div class="card-body">
                       <h5 class="card-title" id="calcibutg">Cálculo de calor (IBUTG)</h5>
@@ -419,27 +433,6 @@
             </div>
            </div> 
 
-
-            
-        <div class="col-md-12 mb-3" style="width: 80%; margin: 0 auto;">
-          <div class="card shadow">
-            <div class="accordion" id="trecho3">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#limiteTolerancia" aria-expanded="true" aria-controls="limiteTolerancia"> 
-                    Limite de Tolerância
-                  </button>
-                </h2>
-                <div id="limiteTolerancia" class="accordion-collapse collapse show" >
-                  <div class="accordion-body">
-                    <strong>Cálculo Limite de Tolerância (LT)</strong>>
-                  </div>
-                </div>
-              </div>
-            </div>  
-          </div>
-        </div>
-
         <div class="col-md-12 mb-3" style="width: 80%; margin: 0 auto;">
           <div class="card shadow">
             <div class="accordion" id="trecho4">
@@ -467,17 +460,21 @@
                       
                       
                         <form id="formulario" action="" method="post" >
-                          <div class="input-group mb-3">
-                            <span for="numPontos" class="input-group-text" id="basic-addon1">Quantos pontos de medição de ruído deseja inserir?</span>
-                            <input type="number" id="numPontos" name="numPontos" class="form-control" placeholder="digite aqui" aria-describedby="basic-addon1" max="20" min="1">
+                          <div class="form-group">
+                            <label for="numPontos" id="basic-addon1">Quantos pontos de medição você deseja inserir?  </label>
+                            <input type="number" id="numPontos" name="numPontos" class="form-control mb-2" placeholder="digite aqui" aria-describedby="basic-addon1" max="20" min="1">
                           </div>
             
-                          <div id="pontosMedicao"></div>
+                          <div id="pontosMedicao">
+
+                          </div>
                           
-                          <button type="submit" class="btn btn-primary mb-3 col-md-12">Calcular LAE</button>
+                          <button type="submit" class="btn btn-primary mt-4">Calcular LAE</button>
                         </form>
 
-                        <center><div  id="resultado"></div></center>
+                        <div id="resultado" class="mt-4">
+                          <!-- Aqui será exibido o resultado -->
+                      </div>
                       
                     </div>
                   </div>
